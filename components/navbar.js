@@ -18,15 +18,14 @@ import ThemeToggleButton from './theme-toggle-button'
 import LocaleToggleButton from './locale-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 
-const LinkItem = ({ href, path, _target, children, ...props }) => {
-  // const active = path === href
+const LinkItem = ({ href, _target, children, ...props }) => {
   const active = false
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
     <NextLink href={href} passHref>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
+        bg={undefined}
         color={active ? '#202023' : inactiveColor}
         _target={_target}
         {...props}

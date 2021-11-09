@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useColorModeValue, Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 const LocaleToggleButton = ({ setLocale, locale }) => {
 
@@ -12,7 +12,7 @@ const LocaleToggleButton = ({ setLocale, locale }) => {
     <AnimatePresence exitBeforeEnter initial={false}>
       <motion.div
         style={{ display: 'inline-block' }}
-        key={useColorModeValue('light', 'dark')}
+        key={locale}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
@@ -20,8 +20,8 @@ const LocaleToggleButton = ({ setLocale, locale }) => {
       >
         <Button
           width="10"
-          colorScheme="teal"
-          onClick={() => onClick()}
+          colorScheme={locale == "jp" ? "orange" : "purple"}
+          onClick={onClick}
         >{locale}</Button>
       </motion.div>
     </AnimatePresence>

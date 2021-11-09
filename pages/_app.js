@@ -8,12 +8,12 @@ import En from '../en.json'
 import Jp from '../jp.json'
 
 function MyApp({ Component, pageProps, router }) {
-  const [locale, setLocale] = useState('en')
+  const [locale, setLocale] = useState('jp')
   const [data, setData] = useState(En)
 
   useEffect(() => {
-    if (locale == "jp") setData(Jp)
-    else if (locale == "en") setData(En)
+    if (locale == "jp") setData(En)
+    else if (locale == "en") setData(Jp)
   }, [locale])
 
 

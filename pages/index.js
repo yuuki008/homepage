@@ -97,7 +97,7 @@ const Home = ({ data }) => {
         </Section>
 
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Sns
           </Heading>
