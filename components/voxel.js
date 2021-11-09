@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { loadObjModel } from '../lib/model'
+import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-loader'
 
 function easeOutCirc(x) {
@@ -74,7 +74,7 @@ const Voxel = () => {
       controls.target = target
       setControls(controls)
 
-      loadObjModel(scene, '/nomu-room.obj', {
+      loadGLTFModel(scene, '/nomu-room.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {

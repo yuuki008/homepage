@@ -1,0 +1,17 @@
+{
+  "message": "Hello, I'm a developer based in Japan Hukuoka!",
+  "name": "Yuuki Noumura",
+  "role": "developer ( frontend / backend / matchoman )",
+  "about": "I'm an engineer based in Fukuoka, Japan, in my first year as a new graduate. I mainly use react for the frontend, and ruby on rails for the backend. In my company, I mainly work on web development for marketing tools.Currently, I am studying to develop mobile apps.  I also love muscle training. Engineering and muscle training are my reasons for living.",
+  "bio": {
+    "born": "Born in Hiroshima (広島), Japan.",
+    "highSchool": "Graduated from Hiroshima Shinjo High School.",
+    "university": "Completed the Bachelor's Program in the Graduate School of Seinan College University. (西南学院大学学士課程)",
+    "atworked": "Worked at UKIYOcreate! Japan"
+  },
+  "from": "",
+  "sports": "",
+  "character": "",
+  "baseball": "",
+  "history": ""
+}

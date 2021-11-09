@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-// import NavBar from '../navbar'
+import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 // import Footer from '../footer'
 import Loader from '../voxel-loader'
+import styled from 'styled-components'
 
 const LazyVoxelDog = dynamic(() => import('../voxel'), {
   ssr: false,
   loading: () => <Loader />
 })
 
-const Main = ({ children }) => {
+const Main = ({ children, router, setLocale, locale }) => {
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -27,13 +28,13 @@ const Main = ({ children }) => {
         <meta property="og:site_name" content="Takuya Matsuyama's Homepage" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/card.png" />
-        <title>Takuya Matsuyama - Homepage</title>
+        <title>Yuuki Noumura - Homepage</title>
       </Head>
 
-      {/* <NavBar path={router.asPath} /> */}
-
+      <NavBar path={router.asPath} setLocale={setLocale} locale={locale} />
       <Container maxW="container.md" pt={14}>
-        <LazyVoxelDog />
+        <Margin />
+        {/* <LazyVoxelDog /> */}
 
         {children}
 
@@ -44,3 +45,8 @@ const Main = ({ children }) => {
 }
 
 export default Main
+
+const Margin = styled.div({
+  width: "100%",
+  height: "300px",
+})
