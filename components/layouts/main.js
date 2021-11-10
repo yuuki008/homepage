@@ -4,7 +4,6 @@ import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 // import Footer from '../footer'
 import Loader from '../voxel-loader'
-import styled from 'styled-components'
 
 const LazyVoxelDog = dynamic(() => import('../voxel'), {
   ssr: false,
@@ -33,8 +32,8 @@ const Main = ({ children, router, setLocale, locale }) => {
 
       <NavBar path={router.asPath} setLocale={setLocale} locale={locale} />
       <Container maxW="container.md" pt={14}>
-        <Margin />
-        {/* <LazyVoxelDog /> */}
+        <LazyVoxelDog />
+        {/* <Loader /> */}
 
         {children}
 
@@ -45,8 +44,3 @@ const Main = ({ children, router, setLocale, locale }) => {
 }
 
 export default Main
-
-const Margin = styled.div({
-  width: "100%",
-  height: "300px",
-})

@@ -17,6 +17,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import LocaleToggleButton from './locale-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
+import ZennIcon from './zenn-icon'
 
 const LinkItem = ({ href, _target, children, ...props }) => {
   const active = false
@@ -71,23 +72,27 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/" path={path}>
-            About
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
           <LinkItem
             _target="_blank"
             href="https://github.com/yuuki008"
             path={path}
             display="inline-flex"
             alignItems="center"
-            style={{ gap: 4 }}
+            style={{ gap: 4, paddingLeft: 0 }}
             pl={2}
           >
-            <IoLogoGithub />
-            Source
+            <IoLogoGithub size={30} />
+          </LinkItem>
+          <LinkItem
+            _target="_blank"
+            href="https://zenn.dev/nomu"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4, padding: 0 }}
+            pl={2}
+          >
+            <ZennIcon />
           </LinkItem>
         </Stack>
 

@@ -19,8 +19,9 @@ const LocaleToggleButton = ({ setLocale, locale }) => {
         transition={{ duration: 0.2 }}
       >
         <Button
+          aria-label="Toggle theme"
           width="10"
-          colorScheme={locale == "jp" ? "orange" : "purple"}
+          colorScheme={locale == "jp" ? "red" : "blue"}
           onClick={onClick}
         >{locale}</Button>
       </motion.div>

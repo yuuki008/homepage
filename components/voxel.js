@@ -74,7 +74,7 @@ const Voxel = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/nomu-room.glb', {
+      loadGLTFModel(scene, '/dog.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
