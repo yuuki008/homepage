@@ -19,7 +19,7 @@ import LocaleToggleButton from './locale-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import ZennIcon from './zenn-icon'
 
-const LinkItem = ({ href, _target, children, ...props }) => {
+const LinkItem = ({ href, children, ...props }) => {
   const active = false
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
@@ -28,7 +28,7 @@ const LinkItem = ({ href, _target, children, ...props }) => {
         p={2}
         bg={undefined}
         color={active ? '#202023' : inactiveColor}
-        _target={_target}
+        target="blank"
         {...props}
       >
         {children}
@@ -73,7 +73,6 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem
-            _target="_blank"
             href="https://github.com/yuuki008"
             path={path}
             display="inline-flex"
@@ -84,7 +83,6 @@ const Navbar = props => {
             <IoLogoGithub size={30} />
           </LinkItem>
           <LinkItem
-            _target="_blank"
             href="https://zenn.dev/nomu"
             path={path}
             display="inline-flex"
