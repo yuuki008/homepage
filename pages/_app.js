@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import En from '../en.json'
 import Jp from '../jp.json'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps, router }) {
   const [locale, setLocale] = useState('jp')
