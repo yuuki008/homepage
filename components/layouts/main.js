@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
-import { Screen } from '../screen'
+// import { Screen } from '../screen'
+import dynamic from 'next/dynamic'
+import Loader from '../voxel-loader'
+
+const LazyComponent = dynamic(() => import('../screen'), {
+  ssr: false,
+  loading: () => <Loader />
+})
 
 const Main = ({ children, router, setLocale, locale }) => {
   return (
@@ -20,7 +27,7 @@ const Main = ({ children, router, setLocale, locale }) => {
 
       <NavBar path={router.asPath} setLocale={setLocale} locale={locale} />
       <Container maxW="container.md" pt={14}>
-        <Screen/>
+        <LazyComponent/>
 
         {children}
 

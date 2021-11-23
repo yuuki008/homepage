@@ -90,7 +90,7 @@ const Navbar = props => {
             style={{ gap: 4, padding: 0 }}
             pl={2}
           >
-            <ZennIcon />
+            <ZennIcon color={"default"} />
           </LinkItem>
         </Stack>
 

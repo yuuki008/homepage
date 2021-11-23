@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-export const Screen = () => {
+const Screen = () => {
 
   return (
     <div
@@ -15,3 +15,5 @@ export const Screen = () => {
     </div>
   )
 }
+
+export default Screen

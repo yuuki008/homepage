@@ -9,8 +9,6 @@ import {
   Icon,
   useColorModeValue
 } from '@chakra-ui/react'
-import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import {
@@ -18,6 +16,8 @@ import {
   IoLogoGithub,
 } from 'react-icons/io5'
 import Image from 'next/image'
+import styled from 'styled-components'
+import ZennIcon from '../components/zenn-icon'
 
 const Home = ({ data }) => {
   return (
@@ -118,9 +118,10 @@ const Home = ({ data }) => {
             <Link href="https://zenn.dev/nomu" target="_blank">
               <Button
                 variant="ghost"
-                colorScheme="teal"
+                  colorScheme="teal"
               >
-                zenn @yuuki008
+                <ZennIcon color="second" />
+                <span style={{ paddingLeft: "9px" }}/>@yuuki008
               </Button>
             </Link>
           </ListItem>
@@ -132,3 +133,19 @@ const Home = ({ data }) => {
 }
 
 export default Home
+
+export const BioSection = styled(Box)`
+  padding-left: 3.4em;
+  text-indent: -3.4em;
+  margin: 8px auto;
+`
+
+export const BioYear = styled.span`
+  font-weight: bold;
+  margin-right: 1em;
+`
+
+const Paragraph = styled.p`
+  text-align: justify;
+  text-indent: 1em;
+`
