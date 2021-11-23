@@ -4,16 +4,16 @@ import {
   Box,
   Link,
   Stack,
-  Heading,
-  Flex,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuButton,
-  IconButton,
+  // Heading,
+  // Flex,
+  // Menu,
+  // MenuItem,
+  // MenuList,
+  // MenuButton,
+  // IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+// import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import LocaleToggleButton from './locale-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
@@ -38,7 +38,7 @@ const LinkItem = ({ href, children, ...props }) => {
 }
 
 const Navbar = props => {
-  const { path } = props
+  const { path, setLocale, locale } = props
 
   return (
     <Box
@@ -58,11 +58,6 @@ const Navbar = props => {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            {/* <Logo /> */}
-          </Heading>
-        </Flex>
 
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -97,10 +92,10 @@ const Navbar = props => {
         <Box flex={1} align="right">
           <Stack spacing={4} direction="row" float="right">
             <ThemeToggleButton />
-            <LocaleToggleButton setLocale={props.setLocale} locale={props.locale} />
+            <LocaleToggleButton setLocale={setLocale} locale={locale} />
           </Stack>
 
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
@@ -126,7 +121,7 @@ const Navbar = props => {
                 </MenuItem>
               </MenuList>
             </Menu>
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>

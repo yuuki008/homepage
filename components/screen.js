@@ -6,9 +6,8 @@ const Screen = () => {
   return (
     <div
       style={{
-        width: '80%',
+        width: '100%',
         margin: '20px auto',
-        // background: '#f4c62d',
         borderRadius: "20px"
       }}>
       <Image className="screen-image" src={"/images/js.jpg"} width={1000} height={700} />

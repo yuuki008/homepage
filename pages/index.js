@@ -23,13 +23,12 @@ const Home = ({ data }) => {
   return (
     <Layout>
       <Container>
-
         <Box display={{ md: 'flex' }} marginBottom={"16"}>
           <Box flexGrow={1}>
             <Heading as="h2" marginBottom={2} marginTop={20} variant="page-title">
               {data.name}
             </Heading>
-            <p>{data.role}</p>
+            <div>{data.role}</div>
           </Box>
           <Box
             flexShrink={0}
@@ -148,4 +147,5 @@ export const BioYear = styled.span`
 const Paragraph = styled.p`
   text-align: justify;
   text-indent: 1em;
+  white-space: pre-wrap
 `
