@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: (
           <>
+            <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Modak&display=swap" rel="stylesheet" />
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>

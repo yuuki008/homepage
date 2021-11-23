@@ -17,11 +17,34 @@ import {
   IoLogoTwitter,
   IoLogoGithub,
 } from 'react-icons/io5'
+import Image from 'next/image'
 
 const Home = ({ data }) => {
   return (
     <Layout>
       <Container>
+
+        <Box display={{ md: 'flex' }} marginBottom={"16"}>
+          <Box flexGrow={1}>
+            <Heading as="h2" marginBottom={2} marginTop={20} variant="page-title">
+              {data.name}
+            </Heading>
+            <p>{data.role}</p>
+          </Box>
+          <Box
+            flexShrink={0}
+            mt={{ base: 4, md: 0 }}
+            ml={{ md: 6 }}
+            textAlign="center"
+          >
+            <Image
+              src="/images/avataaars.png"
+              alt="Profile image"
+              width={180}
+              height={180}
+            />
+          </Box>
+        </Box>
         <Box
           borderRadius="lg"
           mb={6}
@@ -30,32 +53,6 @@ const Home = ({ data }) => {
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         >
           {data.message}
-        </Box>
-
-        <Box display={{ md: 'flex' }} marginBottom={"16"}>
-          <Box flexGrow={1}>
-            <Heading as="h2" marginBottom={2} variant="page-title">
-              {data.name}
-            </Heading>
-            <p>{data.role}</p>
-          </Box>
-          {/* <Box
-            flexShrink={0}
-            mt={{ base: 4, md: 0 }}
-            ml={{ md: 6 }}
-            textAlign="center"
-          >
-            <Image
-              borderColor="whiteAlpha.800"
-              borderWidth={2}
-              borderStyle="solid"
-              maxWidth="100px"
-              display="inline-block"
-              borderRadius="full"
-              src="/images/nomu.jpg"
-              alt="Profile image"
-            />
-          </Box> */}
         </Box>
 
         <Section delay={0.1}>
