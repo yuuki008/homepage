@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
-// import { Screen } from '../screen'
 import dynamic from 'next/dynamic'
 import Loader from '../voxel-loader'
 
@@ -31,7 +30,6 @@ const Main = ({ children, router, setLocale, locale }) => {
 
         {children}
 
-        {/* <Footer /> */}
       </Container>
     </Box>
   )
