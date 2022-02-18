@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import NavBar from '../navbar'
-import { Box, Container } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
-import Loader from '../voxel-loader'
+import Head from "next/head";
+import NavBar from "../navbar";
+import { Box, Container } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
+import Loader from "../voxel-loader";
 
-const LazyComponent = dynamic(() => import('../screen'), {
+const LazyComponent = dynamic(() => import("../screen"), {
   ssr: false,
-  loading: () => <Loader />
-})
+  loading: () => <Loader />,
+});
 
 const Main = ({ children, router, setLocale, locale }) => {
   return (
@@ -18,7 +18,11 @@ const Main = ({ children, router, setLocale, locale }) => {
         <meta name="author" content="Yuuki Noumura" />
         <meta name="author" content="craftzdog" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/images/avataaars.png" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="/images/avataaars.png"
+          type="image/x-icon"
+        />
         <meta property="og:site_name" content="Yuuki Noumura's Homepage" />
         <meta property="og:type" content="website" />
         <title>Yuuki Noumura - Homepage</title>
@@ -26,13 +30,12 @@ const Main = ({ children, router, setLocale, locale }) => {
 
       <NavBar path={router.asPath} setLocale={setLocale} locale={locale} />
       <Container maxW="container.md" pt={14}>
-        <LazyComponent/>
+        <LazyComponent />
 
         {children}
-
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
