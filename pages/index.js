@@ -7,25 +7,30 @@ import {
   List,
   ListItem,
   Icon,
-  useColorModeValue
-} from '@chakra-ui/react'
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
+  useColorModeValue,
+} from "@chakra-ui/react";
+import Layout from "../components/layouts/article";
+import Section from "../components/section";
 import {
-  IoLogoTwitter,
+  // IoLogoTwitter,
   IoLogoGithub,
-} from 'react-icons/io5'
-import Image from 'next/image'
-import styled from 'styled-components'
-import ZennIcon from '../components/zenn-icon'
+} from "react-icons/io5";
+import Image from "next/image";
+import styled from "styled-components";
+import ZennIcon from "../components/zenn-icon";
 
 const Home = ({ data }) => {
   return (
     <Layout>
       <Container>
-        <Box display={{ md: 'flex' }} marginBottom={"16"}>
+        <Box display={{ md: "flex" }} marginBottom={"16"}>
           <Box flexGrow={1}>
-            <Heading as="h2" marginBottom={2} marginTop={20} variant="page-title">
+            <Heading
+              as="h2"
+              marginBottom={2}
+              marginTop={20}
+              variant="page-title"
+            >
               {data.name}
             </Heading>
             <div>{data.role}</div>
@@ -49,7 +54,7 @@ const Home = ({ data }) => {
           mb={6}
           p={3}
           textAlign="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
         >
           {data.message}
         </Box>
@@ -58,9 +63,7 @@ const Home = ({ data }) => {
           <Heading as="h3" variant="section-title">
             About Me
           </Heading>
-          <Paragraph>
-            {data.about}
-          </Paragraph>
+          <Paragraph>{data.about}</Paragraph>
         </Section>
 
         <Section delay={0.2}>
@@ -85,24 +88,23 @@ const Home = ({ data }) => {
           </BioSection>
         </Section>
 
-
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Sns
           </Heading>
           <List>
-          <ListItem>
-            <Link href="https://github.com/yuuki008" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoGithub} />}
-              >
-                @yuuki008
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
+            <ListItem>
+              <Link href="https://github.com/yuuki008" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @yuuki008
+                </Button>
+              </Link>
+            </ListItem>
+            {/* <ListItem>
             <Link href="https://twitter.com/ax0kQcEB93ntx6X" target="_blank">
               <Button
                 variant="ghost"
@@ -112,40 +114,38 @@ const Home = ({ data }) => {
                 @yuuki008
               </Button>
             </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://zenn.dev/nomu" target="_blank">
-              <Button
-                variant="ghost"
-                  colorScheme="teal"
-              >
-                <ZennIcon color="second" />
-                <span style={{ paddingLeft: "9px" }}/>@yuuki008
-              </Button>
-            </Link>
-          </ListItem>
-        </List>
+          </ListItem> */}
+            <ListItem>
+              <Link href="https://zenn.dev/nomu" target="_blank">
+                <Button variant="ghost" colorScheme="teal">
+                  <ZennIcon color="second" />
+                  <span style={{ paddingLeft: "9px" }} />
+                  @yuuki008
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Section>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 export const BioSection = styled(Box)`
   padding-left: 3.4em;
   text-indent: -3.4em;
   margin: 8px auto;
-`
+`;
 
 export const BioYear = styled.span`
   font-weight: bold;
   margin-right: 1em;
-`
+`;
 
 const Paragraph = styled.p`
   text-align: justify;
   text-indent: 1em;
-  white-space: pre-wrap
-`
+  white-space: pre-wrap;
+`;
